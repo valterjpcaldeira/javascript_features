@@ -1,9 +1,8 @@
-//002582426417929266832:holxq5mppiu
-//AIzaSyBX3XQQjOcEUScW3PtmSIub8tYhoyAFDoQ
 //http://suggestqueries.google.com/complete/search?client=chrome&q=gravidez
 var form = document.querySelector('#form');
 var list = document.querySelector('.list');
-
+var engineID = "002582426417929266832:m6ideqoixca";
+var apiKey = "AIzaSyBmBkdY6Jdf02Wxe-HxqQO46WFdRuIsvp0";
 
 
 $( "#searchname" ).autocomplete({
@@ -41,7 +40,7 @@ form.addEventListener('submit', function(e) {
 }); 
 
 function callGoogle(query){
-	var urlToGoogle = "https://www.googleapis.com/customsearch/v1?key=AIzaSyBX3XQQjOcEUScW3PtmSIub8tYhoyAFDoQ&cx=002582426417929266832:holxq5mppiu&q="+query;
+	var urlToGoogle = "https://www.googleapis.com/customsearch/v1?key="+apiKey+"&cx="+engineID+"&q="+query;
 	$.ajax({ 
 	   type: "GET",
 	   dataType: "json",
@@ -134,3 +133,27 @@ function appendTasks(responses) {
 
 	list.innerHTML = taskList+'</div>';
 }
+
+
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+    var expires = "expires="+d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
