@@ -5,7 +5,7 @@ var engineID = "002582426417929266832:m6ideqoixca";
 var apiKey = "AIzaSyBmBkdY6Jdf02Wxe-HxqQO46WFdRuIsvp0";
 
 
-$( "#searchname" ).autocomplete({
+$("#searchname" ).autocomplete({
       source: function( request, response ) {
       	var query = $("#searchname").val();	
         $.ajax( {
@@ -155,5 +155,17 @@ function getCookie(cname) {
         }
     }
     return "";
+}
+
+function checkCookie() {
+    var user=getCookie("username");
+    if (user != "") {
+        alert("Welcome again " + user);
+    } else {
+       user = prompt("Please enter your name:","");
+       if (user != "" && user != null) {
+           setCookie("username", user, 30);
+       }
+    }
 }
 
