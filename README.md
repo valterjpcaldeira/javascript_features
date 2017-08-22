@@ -24,7 +24,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* I thank to Fipa by the patiente with me
+* I thank to Fipa by the patience with me
 * I have this repository just so save some tests and potencial reusable code.
 
 [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
